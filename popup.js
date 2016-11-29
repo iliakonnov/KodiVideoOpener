@@ -1,5 +1,7 @@
 window.onload = function() {
     var bgPage = chrome.extension.getBackgroundPage();
+    $("#loading").prop("src", chrome.extension.getURL("loading.gif"));
+    $("#loading").hide(0);
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         var result = bgPage.getResult(tabs[0].id);
         if (Object.keys(result).length != 0) {
@@ -28,6 +30,7 @@ window.onload = function() {
     });
     $("#kodi").click(function kodiOpen(url) {
         chrome.storage.sync.get("kodiAddr", function(kodiAddr) {
+            $("#loading").show(0);
             kodiAddr = kodiAddr["kodiAddr"];
             $.post({
                 url: kodiAddr+"/jsonrpc",
@@ -63,6 +66,7 @@ window.onload = function() {
                     });
                 }
             });
+            $("#loading").hide(0);
         });
     });
 }
