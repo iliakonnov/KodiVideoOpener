@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Kodi video opener",
+    "description": "This extension starts films on kodi",
+    "version": "1.2",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "webRequest", "tabs", "storage", "*://*/*"
+    ],
+    "background": {
+        "scripts": ["jquery.js", "script.js"]
+    },
+    "icons": {
+        "16": "icons/normal/icon16.png",
+        "32": "icons/normal/icon32.png",
+        "48": "icons/normal/icon48.png",
+        "64": "icons/normal/icon64.png",
+        "128": "icons/normal/icon128.png"
+    },
+    "options_page": "options.html",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw9pLGiWqT72EB9vWE/gmw8zkUkJ+/gG8KdmB2260gDkKlxfvdk7WZGueOYLouQuK/aVL56HMzfDikg33F5iibNG9EhBUri7sgfQF2ER2SgYKXy16K99udKXJyq47pYX4Cr6MFEQqRh4WvQzX2m8jbeJSEUUyxy1h/3NhYW6PRlGp3MOkSATF9fDtV/L+ftiGjYHeuYTuyJHxU0tMBThrNZ2L/zJaeM+X0X95JV2V4KIKFTFudtYzMYnAwAn32lOJEF4J5u2oIT6zwwHYpO/Fzn+AebOEa9f/jWwOoJK8C9gqYmHCWCLD7q6Ylf1Cjv5I3oT1IBwdM0jw/5sfgXb49wIDAQAB"
+}
