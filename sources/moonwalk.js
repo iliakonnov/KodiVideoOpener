@@ -1,4 +1,5 @@
 // Moonwalk
+// Качество видео максимальное, даже если не смотреть рекламу.
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         if (details.tabId != -1) {

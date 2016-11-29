@@ -14,7 +14,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             id: "yt-playlist-" + playlistId,
             file: details.url,
             kodi: "plugin://plugin.video.youtube/play/?order=default&playlist_id=" + playlistId,
-            size: -1
+            size: -2
         });
         setIcon(details.tabId);
     },

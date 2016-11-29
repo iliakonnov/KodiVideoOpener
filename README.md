@@ -10,7 +10,8 @@ This extension starts films on kodi
 * youtube.com (videos and playlist with [YouTube plugin](http://kodi.wiki/view/Add-on:YouTube) installed on kodi)
 * vk.com (uses mp4)
 * kinogo.club (uses flv)
-* ivi.ru (uses mp4, no ads)
+* megogo.net (uses m3u8)
+* ivi.ru (uses mp4)
 * moonwalk.co players (uses m3u8):
     + kinoogo.co
     + gidonline.club
