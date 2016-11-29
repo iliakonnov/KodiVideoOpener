@@ -5,6 +5,7 @@ function setElem(id, attr) {
 }
 
 window.onload = function() {
+    $("#Ok").hide(0);
     setElem("kodiAddr", "value");
     setElem("webInterface", "checked");
     setElem("advancedMode", "checked");
@@ -16,5 +17,7 @@ window.onload = function() {
             'advancedMode': $("#advancedMode").prop("checked"),
             'alwaysResult': $("#alwaysResult").prop("checked")
         });
+        $("#Ok").show(0);
+        $("#Ok").hide(2500);
     })
 };
