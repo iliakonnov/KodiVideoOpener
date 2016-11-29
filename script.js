@@ -81,6 +81,7 @@ chrome.tabs.onCreated.addListener( function(tab) {
 });
 
 chrome.runtime.onInstalled.addListener( function(details) {
+    chrome.runtime.openOptionsPage();
     chrome.tabs.query({}, function(tabs) {
         for (i in tabs) {
             if ( tabs[i].hasOwnProperty("id") ) {  // Ignore special tabs
