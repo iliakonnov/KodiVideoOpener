@@ -2,10 +2,11 @@ var results = {};
 
 // Loading sources
 [
-    "mp4_flv",   // size>= 0
-    "moonwalk",  // size= -1
-    "youtube",   // size= -2
-    "m3u8"       // size= -3
+    "mp4_flv",          // size>= 0
+    "moonwalk",         // size= -1
+    "youtube",          // size= -2
+    "m3u8",             // size= -3
+    "youtube_external"  // size= -4
 ].forEach(function (item, i, arr) {
     var scriptEl = document.createElement('script');
     scriptEl.src = chrome.extension.getURL("sources/"+item+".js");
