@@ -5,7 +5,12 @@ chrome.webRequest.onHeadersReceived.addListener(
             var url = details.url;
             var length = details.responseHeaders.filter(function( obj ) {
                 return obj.name == "Content-Length";
-            })[0]["value"];
+            });
+            if ( length.length != 0) {
+                length = [0]["value"];
+            } else {
+                length = 1;  // Ads may overwrite video!
+            }
             var filename = url.split("/").pop();
 
             var result = getResult(details.tabId);
