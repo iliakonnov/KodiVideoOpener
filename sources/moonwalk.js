@@ -4,11 +4,11 @@ chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         if (details.tabId != -1) {
             var formData = {"video_token": details.requestBody.formData["video_token"][0]};
-            ["mw_domain_id", "access_key"].forEach(function(elem){
+            ["mw_domain_id", "mw_key", "access_key"].forEach(function(elem){
                 if (elem in details.requestBody.formData) {
                     formData[elem] = details.requestBody.formData[elem][0]
                 }
-            }
+            });
             
             $.post({
                 type: "POST",
@@ -17,6 +17,7 @@ chrome.webRequest.onBeforeRequest.addListener(
                 dataType: "json",
                 headers: {
                     "X-Data-Pool": "Stream",
+                    "X-Iframe-Option": "Direct",
                     "X-Requested-With": "XMLHttpRequest"
                 },
                 success: function(data) {
