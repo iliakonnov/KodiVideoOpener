@@ -6,8 +6,8 @@ chrome.webRequest.onHeadersReceived.addListener(
             var length = details.responseHeaders.filter(function( obj ) {
                 return obj.name == "Content-Length";
             });
-            if ( length.length != 0) {
-                length = [0]["value"];
+            if ( length.length != 0 ) {
+                length = parseInt(length[0]["value"]);
             } else {
                 length = 1;  // Ads may overwrite video!
             }
