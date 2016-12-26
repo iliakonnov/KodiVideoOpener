@@ -3,11 +3,12 @@
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         if (details.tabId != -1) {
-            var formData = {
-                video_token: details.requestBody.formData["video_token"][0],
-                access_key: details.requestBody.formData["access_key"][0],
-                mw_domain_id: details.requestBody.formData["mw_domain_id"][0]
-            };
+            var formData = {"video_token": details.requestBody.formData["video_token"][0]};
+            ["mw_domain_id", "access_key"].forEach(function(elem){
+                if (elem in details.requestBody.formData) {
+                    formData[elem] = details.requestBody.formData[elem][0]
+                }
+            }
             
             $.post({
                 type: "POST",
