@@ -1,10 +1,10 @@
 // Moonwalk
-// Качество видео максимальное, даже если не смотреть рекламу.
+// Качество видео максимальное, даже если не смотреть рекламу, т.к. не передаётся часть параметров
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         if (details.tabId != -1) {
-            var formData = {"video_token": details.requestBody.formData["video_token"][0]};
-            ["mw_domain_id", "mw_key", "access_key"].forEach(function(elem){
+            var formData = {};
+            ["video_token", "mw_domain_id", "mw_key", "uuid"].forEach(function(elem){
                 if (elem in details.requestBody.formData) {
                     formData[elem] = details.requestBody.formData[elem][0]
                 }
