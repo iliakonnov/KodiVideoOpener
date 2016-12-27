@@ -4,7 +4,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
         if (details.tabId != -1) {
             var formData = {};
-            ["video_token", "mw_domain_id", "mw_key", "uuid"].forEach(function(elem){
+            ["video_token", "mw_domain_id", "mw_key", "uuid", "content_type", "mw_pid"].forEach(function(elem){
                 if (elem in details.requestBody.formData) {
                     formData[elem] = details.requestBody.formData[elem][0]
                 }
